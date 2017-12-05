@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Charset -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>0x00000001</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming-->
+	<meta name="view-port" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="../../css/themes/my-theme.css" />
+	<link rel="stylesheet" href="../../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../../css/my-style.css" />
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- cordova js -->
+	<script src="../../cordova.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="bsod-code" data-theme="a">
+
+	<div data-role="header">
+		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
+		<h1>0x00000001</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+
+		<p><strong>Шестнадцатеричный код ошибки</strong>: 0x00000001</p>
+		<p><strong>Название BSoD ошибки</strong>: APC_INDEX_MISMATCH</p>
+
+		<p><strong>Параметры APC_INDEX_MISMATCH:</strong></p>
+		<ol>
+			<li>Адрес системной функции (системного вызова) или подпрограммы;</li>
+			<li>Значение поля ApcStateIndex текущего потока;</li>
+			<li>Значение поля CombinedApcDisable текущего потока. Это поле состоит из двух отдельных 16-разрядных полей: (Поток - SpecialApcDisable &#60; 16 и Поток – KernelApcDisable);</li>
+			<li>Тип вызова (0 - системный вызов, 1 - подпрограмма).</16>
+		</ol>
+
+		<p><strong>Причина появления ошибки 0x01</strong></p>
+		<p>Наиболее распространенная причина этой STOP-ошибки является несогласованная последовательность вызовов отключения и повторного включения APC у файловой системы или драйвера. Ключевой элемент данных – поле CombinedApcDisable  потока. Поле CombinedApcDisable состоит из двух отдельных 16-разрядных полей: SpecialApcDisable и KernelApcDisable. Отрицательная величина каждого поля указывает, что драйвер отключил специальные или обычные APC (соответственно), без дальнейшего включения. Положительное значение указывает, что драйвер включил специальные или обычные APC слишком много раз.</p>
+
+		<p><strong>Драйвера, вызывающие код ошибки</strong></p>
+		<ul>
+			<li>tcpip.sys;</li>
+			<li>ntoskrnl.exe;</li>
+			<li>ndis.sys;</li>
+			<li>raspppoe.sys;</li>
+			<li>win32k.sys;</li>
+			<li>psi.sys.</li>
+		</ul>
+
+		<p><strong>Как исправить Stop 0x00000001</strong></p>
+		<p>1. BSoD 0x00000001 появляется в ОС Windows Server 2008, Windows 7 и Windows 8 при установке сторонних приложений для MTP и WPD устройств. Также при их первой установке.  </p>
+		<p>Данный код ошибки происходит из-за противоречивого состояния драйвера Compositebus.sys. Когда MTP или MPD устройства впервые подключаются к компьютеру перечислитель составной шины обнаруживает их и пытается установить драйвер данного устройства. Во время процесса установки стороннее приложение может выполнить команду сброса USB-устройства, что и вызывает ошибку.</p>
+		<p>Для устранения ошибки загрузите и установите последние обновления на  вашу операционную систему.</p>
+		<p>2. STOP 0x00000001 появляется в ОС Windows Vista из-за обнаружения ошибке в системном файле Win32k.sys. При этом поле CombinedApcDisable имеет значение 0x0000FFFF.</p>
+		<p>Обновление операционной системы устранит эту ошибку.</p>
+
+		<p><strong>Подробно об ошибке</strong></p>
+		<p>APC_INDEX_MISMATCH  - внутренняя ошибка ядра. Она встречается при завершении системного вызова. Ошибка 0x00000001 возникает, когда у файловой системы или драйвера есть несогласованная последовательность системных вызовов, чтобы запустить или завершить защищаемую или критическую секцию. Например, у каждого вызова KeEnterCriticalRegion должен быть соответствующий вызов KeLeaveCriticalRegion.</p>
+		<p>Error APC INDEX MISMATCH чаще всего возникает при несовпадении меток KeEnterCricticalRegion и KeLeaveCriticalRegion в файловой системе. KeEnterCricticalRegion временно отключает доставку обычных APC режима ядра, при этом специальные APC режима ядра продолжают доставляться. KeLeaveCriticalRegion включает доставку обычных APC режима ядра, которые были отключены вызовом KeEnterCricticalRegion. Критическая секция может быть запущена рекурсивно, при этом у каждого вызова KeEnterCricticalRegion должен быть соответствующий вызов KeLeaveCriticalRegion.</p>
+		<p>Источник: bsodstop.ru</p>
+	</div>
+
+</div>
+
+</body>
+</html>
