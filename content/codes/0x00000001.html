@@ -22,7 +22,7 @@
 
 <div data-role="page" id="bsod-code" data-theme="a">
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
 		<h1>0x00000001</h1>
 	</div>
@@ -63,7 +63,6 @@
 		<p><strong>Подробно об ошибке</strong></p>
 		<p>APC_INDEX_MISMATCH  - внутренняя ошибка ядра. Она встречается при завершении системного вызова. Ошибка 0x00000001 возникает, когда у файловой системы или драйвера есть несогласованная последовательность системных вызовов, чтобы запустить или завершить защищаемую или критическую секцию. Например, у каждого вызова KeEnterCriticalRegion должен быть соответствующий вызов KeLeaveCriticalRegion.</p>
 		<p>Error APC INDEX MISMATCH чаще всего возникает при несовпадении меток KeEnterCricticalRegion и KeLeaveCriticalRegion в файловой системе. KeEnterCricticalRegion временно отключает доставку обычных APC режима ядра, при этом специальные APC режима ядра продолжают доставляться. KeLeaveCriticalRegion включает доставку обычных APC режима ядра, которые были отключены вызовом KeEnterCricticalRegion. Критическая секция может быть запущена рекурсивно, при этом у каждого вызова KeEnterCricticalRegion должен быть соответствующий вызов KeLeaveCriticalRegion.</p>
-		<p>Источник: bsodstop.ru</p>
 	</div>
 
 </div>

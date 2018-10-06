@@ -22,7 +22,7 @@
 
 <div data-role="page" id="bsod-code" data-theme="a">
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
 		<h1>0x00000005</h1>
 	</div>
@@ -51,7 +51,6 @@
 		<p><strong>Комментарии</strong></p>
 		<p>Эта ошибка может произойти, если драйвер вызывает функцию KeAttachProcess, и поток уже присоединен к другому процессу. Лучше использовать функцию KeStackAttachProcess. Если текущий поток уже был присоединен к другому процессу, функция KeStackAttachProcess сохраняет текущее состояние APC прежде, чем текущий поток присоединится к новому процессу.</p>
 
-		<p>Источник: bsodstop.ru</p>
 	</div>
 
 </div>
