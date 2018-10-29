@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Charset -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>0x00000036</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming-->
+	<meta name="view-port" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="../../css/themes/my-theme.css" />
+	<link rel="stylesheet" href="../../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../../css/my-style.css" />
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- cordova js -->
+	<script src="../../cordova.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="bsod-code" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
+		<h1>0x00000036</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+
+		<p><strong>Шестнадцатеричный код ошибки</strong>:</p>
+
+		<p>0x00000036</p>
+
+		<p><strong>Название BSoD ошибки</strong>:</p>
+
+		<p>DEVICE_REFERENCE_COUNT_NOT_ZERO</p>
+
+		<p><strong>Причина</strong>:</p>
+
+		<p>Код 0x00000036 указывает, что была предпринята попытка удалить объект “устройство”, счетчик ссылок которого имеет ненулевое значение. Ненулевое значение счетчика ссылок означает, что все еще есть  выдающиеся ссылки на устройство. Возможно проблема в запросе драйвера устройства.</p>
+
+		<p>Драйвер устройства попытался удалить один из своих объектов “устройство”  системы, но счетчик ссылок для того объекта имеет ненулевое значение. Это - ошибка запроса  драйвера устройства.</p>
+
+		<p><strong>Устранение ошибки</strong>:</p>
+
+		<p>По названию драйвера, показанному в BSoD, необходимо определить к какому устройству он принадлежит. Установить более свежие драйвера данного устройства. Если синий экран продолжает появляться, то необходимо удалить или заменить сбойное устройство.</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>
