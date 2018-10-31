@@ -9,14 +9,14 @@
 		    <name>BSoD</name>
 
 		    <!-- Описание приложения -->
-		    <description>Синий экран смерти (BSoD) – ошибки, с которыми сталкиваются пользователи в операционных системах семейства Windows.</description>
+		    <description>Приложение содержит в себе причины возникновения, расшифровки и методы устранения ошибок BSoD.</description>
 
 		    <!-- Автор приложения -->
 		    <author href="https://artemsannikov.ru" email="info@artemsannikov.ru">
 		    	Artem Sannikov
 		    </author>
 
-		    <!-- Иконки для платформы Android -->
+		    <!-- ###Иконки для платформы Android### -->
 			<platform name="android">
 				<icon density="ldpi" src="res/icons/android/ldpi.png"/>
 				<icon density="mdpi" src="res/icons/android/mdpi.png"/>
@@ -29,7 +29,7 @@
 			<!-- Стартовая страница -->
 			<content src="index.html"></content>
 
-			<!-- Разрешения -->
+			<!-- ###Разрешения### -->
 			<preference name="permissions" value="none"/>
 
 			<!-- Версия API  -->
@@ -41,20 +41,13 @@
 			
 			<!--<preference name="fullscreen" value="true" />-->
 
-			<preference name="AllowInlineMediaPlayback" value="true" /> <!-- разрешить воспроизведение медиафайлов html5 -->
+			<!-- разрешить воспроизведение медиафайлов html5 -->
+			<preference name="AllowInlineMediaPlayback" value="true" />
 
-			<preference name="MediaPlaybackRequiresUserAction" value="false" /> <!-- отмена автоматического воспроизведения -->
+			<!-- отмена автоматического воспроизведения -->
+			<preference name="MediaPlaybackRequiresUserAction" value="false" />
 			
 			<preference name="InAppBrowserStorageEnabled" value="true" />
-			
-			<!-- Плагины -->
-
-			<!-- Для открытия внешних ссылок -->
-			<plugin name="cordova-plugin-whitelist" spec="1" /> 
-			<!-- Cordova AdMob Pro - Ссылка https://github.com/floatinghotpot/cordova-admob-pro -->
-			<plugin name="cordova-admob-pro" source="npm"><!-- -->
-				<variable name="PLAY_SERVICES_VERSION" value="16.0.0" />
-			</plugin>
 
 			<!-- Доступ к web сайтам -->
 			<access origin="*" />
@@ -67,5 +60,11 @@
 			<platform name="android">
 				<allow-intent href="market:*" />
 			</platform>
+
+			<!-- ###Плагины### -->
+
+			<!-- Для открытия внешних ссылок -->
+			<plugin name="cordova-plugin-whitelist" spec="1" /> 
+			<!-- Cordova AdMob Pro - Ссылка https://github.com/floatinghotpot/cordova-admob-pro -->
 
 	</widget>
