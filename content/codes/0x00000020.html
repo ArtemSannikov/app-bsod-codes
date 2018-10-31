@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Charset -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>0x00000020</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming-->
+	<meta name="view-port" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="../../css/themes/my-theme.css" />
+	<link rel="stylesheet" href="../../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../../css/my-style.css" />
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- cordova js -->
+	<script src="../../cordova.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="bsod-code" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
+		<h1>0x00000020</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+
+		<p><strong>Шестнадцатеричный код ошибки</strong>:</p>
+
+		<p>0x00000020</p>
+
+		<p><strong>Название BSoD ошибки</strong>:</p>
+
+		<p>KERNEL_APC_PENDING_DURING_EXIT</p>
+
+		<p><strong>Причина</strong>:</p>
+
+		<p>Код 0x00000020 указывает, что асинхронный вызов процедуры (APC) находился в режиме ожидания при завершении выполнения потока.</p>
+
+		<p>Ключевой параметр - количество отключений APC для потока (Параметр 2) . Если количество будет ненулевым, то оно укажет на источник проблемы. Количество отключений APC уменьшается каждый раз, когда драйвер вызывает KeEnterCriticalRegion, FsRtlEnterFileSystem, или при работе мьютекса. Количество отключений APC постепенно увеличивается каждый раз, когда драйвер вызывает KeLeaveCriticalRegion, KeReleaseMutex, или FsRtlExitFileSystem.</p>
+
+		<p>Поскольку эти вызовы парные, количество отключений APC должно быть нулем, когда поток завершается. Отрицательная величина указывает, что драйвер отключил вызовы APC, не включая их повторно. Положительное значение указывает на противоположенную ситуацию.</p>
+
+		<p>При появлении Stop 0x00000020, первое на что следует обратить внимание, так это на установленные в системе драйвера.</p>
+
+		<p>Текущий IRQL (Параметр 3) должен иметь нулевое значение. В противном  случае тщательно отметьте то, что работало (и что закрывалось) во время появления ошибки, и отметьте все установленные драйверы. Причина синего экрана в сбое драйвера.</p>
+
+		<p><strong>Устранение ошибки</strong>:</p>
+
+		<p>1. BSoD появляется, потому что модуль Win32k.sys неправильно управляет объектами шрифта. Это в свою очередь вызывает проблему асинхронного вызова процедуры (APC). Когда операционная система обнаруживает утечку APC появляется синий экран с ошибкой KERNEL_APC_PENDING_DURING_EXIT.</p>
+
+		<p>Для устранения ошибки установите последний Service Pack.</p>
+
+		<p>2. Ошибка происходит на серверах, которые выполняют Symantec pcAnywhere 11.5 к Symantec AntiVirus 8.x или к Symantec AntiVirus 9.0. Обновленная версия драйвера Обработчика событий Symantec (Symevent.sys) вызывает эту проблему. Драйвер Symevent.sys установливается с pcAnywhere 11.5. Драйвер Symevent.sys заставляет драйвер защиты в реальном времени Symantec  генерировать "Stop 0x00000020".</p>
+
+		<p>Для устранения данной ошибки  установите последний драйвер Symevent.sys.</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>
