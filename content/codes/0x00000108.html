@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Charset -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>0x00000108</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming-->
+	<meta name="view-port" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="../../css/themes/my-theme.css" />
+	<link rel="stylesheet" href="../../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../../css/my-style.css" />
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- cordova js -->
+	<script src="../../cordova.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="bsod-code" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
+		<h1>0x00000108</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+
+		<p><strong>Шестнадцатеричный код ошибки</strong>:</p>
+
+		<p>0x00000108</p>
+
+		<p><strong>Название BSoD ошибки</strong>:</p>
+
+		<p>THIRD_PARTY_FILE_SYSTEM_FAILURE</p>
+
+		<p><strong>Причина</strong>:</p>
+
+		<p> Данный BSoD может быть вызван двумя причинами:</p>
+
+		<p> 1. Дисковое повреждение. Повреждение в сторонней файловой системе или сбойные блоки (сектора) на жестком диске может вызвать эту ошибку. Повреждение SCSI и драйвера IDE также оказывают негативное влияние на возможность операционной системы Windows читать и записать данные на диски, что приводит к появлению синего экрана 0x00000108.</p>
+
+		<p>2. Истощение памяти пула неподкачиваемой памяти. Если пул неподкачиваемой памяти полностью истощен, система выводит сообщение об ошибке.</p>
+
+		<p><strong>Устранение ошибки</strong>:</p>
+
+		<p>Устранение проблемы дискового повреждения: Проверьте журнал Event Viewer на сообщения об ошибках от SCSI, IDE или других дисковых контроллеров в системе. Эти сведения могут помочь точно определять устройство или драйвер, вызвавшие ошибку. Отключить вирусные сканеры, программы резервного копирования и дефрагментаторы дисков, которые запущены в системе. Выполните аппаратную диагностику и диагностику файловой системы.</p>
+
+		<p>Устранение проблемы истощения памяти пула неподкачиваемой памяти: Добавьте новую физическую память к компьютеру. Это увеличит количество памяти пула неподкачиваемой памяти, доступной ядру.</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>

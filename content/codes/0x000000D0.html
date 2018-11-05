@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Charset -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>0x000000D0</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming-->
+	<meta name="view-port" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="../../css/themes/my-theme.css" />
+	<link rel="stylesheet" href="../../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../../css/my-style.css" />
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- cordova js -->
+	<script src="../../cordova.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="bsod-code" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
+		<h1>0x000000D0</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+
+		<p><strong>Шестнадцатеричный код ошибки</strong>:</p>
+
+		<p>0x000000D0</p>
+
+		<p><strong>Название BSoD ошибки</strong>:</p>
+
+		<p>DRIVER_CORRUPTED_MMPOOL</p>
+
+		<p><strong>Причина</strong>:</p>
+
+		<p>Ядро попыталось получить доступ к страничной памяти (или возможно абсолютно недопустимой памяти) при слишком высоком уровне  IRQL. Окончательная причина синего экрана - драйвер, который повредил системный пул.</p>
+
+		<p>В большинстве случаев эта ошибка является результатом  повреждения драйвером большого выделение (PAGE_SIZE или больше). Повреждения меньшего выделения приводят к Stop ошибке 0x000000C5 (DRIVER_CORRUPTED_EXPOOL).</p>
+
+		<p><strong>Устранение ошибки</strong>:</p>
+
+		<p>Убедитесь, что недавно установленные программы работают должным образом. Обновите драйвера устройств, скачивая их только с веб-сайтов производителя.</p>
+
+		<p>Чтобы отладить BSoD, используйте специальную опцию пула Верификатора Драйвера. Если драйвер, который вызвал ошибку, не указывается, используйте утилиту Global Flags.</p>
+
+		<p>Альтернативным методом является ключ реестра \\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management. В этом ключе создайте или отредактируйте значение ProtectNonPagedPool и установите его равный DWORD 1. Затем перегрузите компьютер. Система перестанет отображать весь освобожденный пул не подкачиваемой памяти. Это будет препятствовать его повреждению. Данный метод не защищает пул от аппаратных средств DMA.</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Charset -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>0x00000154</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming-->
+	<meta name="view-port" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="../../css/themes/my-theme.css" />
+	<link rel="stylesheet" href="../../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../../css/my-style.css" />
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- cordova js -->
+	<script src="../../cordova.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="bsod-code" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
+		<h1>0x00000154</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+
+		<p><strong>Шестнадцатеричный код ошибки</strong>:</p>
+
+		<p>0x00000154</p>
+
+		<p><strong>Название BSoD ошибки</strong>:</p>
+
+		<p>UNEXPECTED_STORE_EXCEPTION</p>
+
+		<p><strong>Причина</strong>:</p>
+
+		<p>Код 0x00000154 указывает на то, что компонент хранилища обнаружил непредвиденное исключение.</p>
+
+		<p><strong>Устранение ошибки</strong>:</p>
+
+		<p>Чтобы устранить ошибку нужно вызвать СMD (командную строку). Для этого есть несколько способов, рассмотрим один из них: нужно кликнуть ПКМ по эмблеме Windows в нижнем левом углу (кнопка «Пуск»), в окне открыть «Командная строка (администратор)». Далее прописать команды:</p>
+
+		<ul>
+			<li>dism /Online /Cleanup-Image /CheckHealth;</li>
+			<li>dism /Online /Cleanup-Image /RestoreHealth;</li>
+			<li>sfc /scannow.</li>
+		</ul>
+
+		<p>Процессы могут занять немало времени. Если после завершения ничего не изменилось, нужно будет запустить проверку Hard Disk. Для этого прописываем в CMD команду «chkdsk с: /f/r/x» (без кавычек).</p>
+
+		<p>В случае, если проверка найдет много битых секторов и ошибок, то, скорее всего, причиной появления ошибки 0x00000154 является ваш жесткий диск.</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>

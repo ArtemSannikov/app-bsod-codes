@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Charset -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>0x000000DB</title>
+	<!-- Include meta tag to ensure proper rendering and touch zooming-->
+	<meta name="view-port" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="../../css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="../../css/themes/my-theme.css" />
+	<link rel="stylesheet" href="../../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../../css/my-style.css" />
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script type="text/javascript" src="../../js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- cordova js -->
+	<script src="../../cordova.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="bsod-code" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a data-role="button" data-rel="back" data-ajax="false" class="ui-nodisc-icon transparentButton" data-icon="carat-l" data-iconpos="notext" data-theme="a" style="margin-top: 2px;">Кнопка назад</a>
+		<h1>0x000000DB</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+
+		<p><strong>Шестнадцатеричный код ошибки</strong>:</p>
+
+		<p>0x000000DB</p>
+
+		<p><strong>Название BSoD ошибки</strong>:</p>
+
+		<p>DRIVER_CORRUPTED_SYSPTES</p>
+
+		<p><strong>Причина</strong>:</p>
+
+		<p>Драйвер попытался получить доступ к страничной памяти при слишком высоком IRQL. Синий экран смерти почти всегда вызывается драйверами, которые повредили систему PTEs.</p>
+
+		<p><strong>Устранение ошибки</strong>:</p>
+
+		<p>Для начала следует выявить сбойный драйвер.  Если в сообщении синего экрана 0x000000DB отсутствует название сбойного драйвера, то его можно найти с помощью дампа памяти. Подробнее в статье “Анализ дампа памяти”. Также можно отредактировать реестр, чтобы определить сбойный драйвер. В ветке реестре HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory создайте или отредактируйте значение TrackPtes и установите его равным DWORD 3. Для того чтобы изменения вступили в силу перезагрузите систему. После проделанных манипуляций трассировка стека идентифицирует драйвер, который вызвал ошибку.</p>
+
+		<p>После того, как виновник возникновения ошибки будет найден, в зависимости от ситуации его необходимо обновить, откатить или удалить.</p>
+
+	</div>
+
+</div>
+
+</body>
+</html>
